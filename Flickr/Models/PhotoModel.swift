@@ -23,12 +23,15 @@ class PhotoModel {
     let owner_name: String
     let views: String
     let nsid: String
+    let iconfarm: String
+    
     
     //date_taken,icon_server,geo,tags,owner_name,views
     var size: CGSize?
     var url: String?
+    var urlIcon: String?
     
-    init(id: String, owner: String, secret: String, server: String, farm: Int, title: String?, date_taken: String, icon_server: String, geo: String, tags: String, owner_name: String, views: String, nsid: String) {
+    init(id: String, owner: String, secret: String, server: String, farm: Int, title: String?, date_taken: String, icon_server: String, geo: String, tags: String, owner_name: String, views: String, nsid: String, iconfarm: String) {
         self.owner = owner
         self.secret = secret
         self.server = server
@@ -42,6 +45,7 @@ class PhotoModel {
         self.owner_name = owner_name
         self.views = views
         self.nsid = nsid
+        self.iconfarm = iconfarm
     }
 }
 
@@ -60,7 +64,8 @@ extension PhotoModel {
         let owner_name = json["extras"]["owner_name"].stringValue
         let views = json["extras"]["views"].stringValue
         let nsid = json["user_id"]["id"].stringValue
-        self.init(id: id, owner: owner, secret: secret, server: server, farm: farm, title: title, date_taken: date_taken, icon_server: icon_server, geo: geo, tags: tags, owner_name: owner_name, views: views, nsid: nsid)
+        let iconfarm = json["iconfarm"].stringValue
+        self.init(id: id, owner: owner, secret: secret, server: server, farm: farm, title: title, date_taken: date_taken, icon_server: icon_server, geo: geo, tags: tags, owner_name: owner_name, views: views, nsid: nsid, iconfarm: iconfarm)
     }
 
 }

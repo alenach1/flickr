@@ -43,9 +43,6 @@ class TapeViewController: BaseViewController {
         setupTabaleView()
         loadPhotos()
         registerNibs()
-        
-        
-        
     }
     
    
@@ -103,12 +100,10 @@ extension TapeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
-            let vc = DetailViewController()
+        let vc = DetailViewController()
         vc.model = dataSourse[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 //MARK: - Получаем размер фотографий

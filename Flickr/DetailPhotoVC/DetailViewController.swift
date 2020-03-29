@@ -135,11 +135,17 @@ class DetailViewController: BaseViewController {
         
     }
     func configure(withPhoto photo: PhotoModel) {
+        //MARK: -  Конфигурация изображения
         guard let url = URL(string: photo.url ?? "") else {
             preparedView.image = nil
             return
         }
         preparedView.sd_setImage(with: url)
+        
+        //MARK: - Конфигурация иконки пользователя
+        guard <#condition#> else {
+            <#statements#>
+        }
     }
     
     

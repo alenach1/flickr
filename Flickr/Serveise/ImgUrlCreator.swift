@@ -15,10 +15,5 @@ class ImgUrlCreator {
     }
 }
 
-class IconUrlCreator {
-    func creatUrl(withModel model: PhotoModel) -> String {
-        let url = "http://farm\(model.farm).staticflickr.com/\(model.icon_server)/buddyicons/\(model.nsid).jpg"
-        return url
-    }
-}
+
 

@@ -30,6 +30,7 @@
 		F7AAE4B2241183BD007A2ECA /* FlickrLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AAE4B1241183BD007A2ECA /* FlickrLoader.swift */; };
 		F7AAE4B5241187DE007A2ECA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AAE4B4241187DE007A2ECA /* BaseViewController.swift */; };
 		F7B8ABFE2428C4310070B578 /* GetInfoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8ABFD2428C4310070B578 /* GetInfoUser.swift */; };
+		F7B8AC002430C90A0070B578 /* IconUrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8ABFF2430C90A0070B578 /* IconUrlCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		F7AAE4B1241183BD007A2ECA /* FlickrLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrLoader.swift; sourceTree = "<group>"; };
 		F7AAE4B4241187DE007A2ECA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F7B8ABFD2428C4310070B578 /* GetInfoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoUser.swift; sourceTree = "<group>"; };
+		F7B8ABFF2430C90A0070B578 /* IconUrlCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconUrlCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F7AAE49524040B7D007A2ECA /* ImgUrlCreator.swift */,
+				F7B8ABFF2430C90A0070B578 /* IconUrlCreator.swift */,
 				F7AAE49D240429D5007A2ECA /* PhotoSizeManager.swift */,
 				F7B8ABFD2428C4310070B578 /* GetInfoUser.swift */,
 			);
@@ -369,6 +372,7 @@
 				F7AAE4B5241187DE007A2ECA /* BaseViewController.swift in Sources */,
 				F7AAE4AF240C1F5F007A2ECA /* DetailViewController.swift in Sources */,
 				F7AAE4B2241183BD007A2ECA /* FlickrLoader.swift in Sources */,
+				F7B8AC002430C90A0070B578 /* IconUrlCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
