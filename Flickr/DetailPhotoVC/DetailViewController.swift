@@ -143,9 +143,11 @@ class DetailViewController: BaseViewController {
         preparedView.sd_setImage(with: url)
         
         //MARK: - Конфигурация иконки пользователя
-        guard <#condition#> else {
-            <#statements#>
+        guard let urlIcon = URL(string: photo.urlIcon ?? "") else {
+            userIcon.image = nil
+            return
         }
+        userIcon.sd_setImage(with: urlIcon)
     }
     
     

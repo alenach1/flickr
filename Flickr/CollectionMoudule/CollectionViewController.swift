@@ -23,6 +23,7 @@ class CollectionViewController: BaseViewController {
     
     var dataSourse: [PhotoModel] = []
     let imgUrlCreator = ImgUrlCreator()
+    let iconCreator = IconUrlCreator()
     
     var state: VCCollectionState = .initial
     
@@ -112,6 +113,10 @@ extension CollectionViewController {
                 
                 let url = self.imgUrlCreator.creatUrl(withModel: photo)
                 photo.url = url
+                
+                let urlIcon = self.iconCreator.creatUrlIcon(withModel: photo)
+                photo.urlIcon = urlIcon
+                
                 photos.append(photo)
             }
             let currentPage = json["photos"]["page"].intValue

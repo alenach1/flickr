@@ -30,6 +30,7 @@ class TapeViewController: BaseViewController {
     var state: VCState = .loaded
     
     let imgUrlCreator = ImgUrlCreator()
+    let iconCreator = IconUrlCreator()
     var dataSourse: [PhotoModel] = []
     
     var total: Int = 0
@@ -133,6 +134,9 @@ extension TapeViewController {
                 
                 let url = self.imgUrlCreator.creatUrl(withModel: photo)
                 photo.url = url
+                
+                let urlIcon = self.iconCreator.creatUrlIcon(withModel: photo)
+                photo.urlIcon = urlIcon
                 photos.append(photo)
             }
             let currentPage = json["photos"]["page"].intValue
