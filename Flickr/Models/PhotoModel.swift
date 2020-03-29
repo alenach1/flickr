@@ -59,7 +59,7 @@ extension PhotoModel {
         let tags = json["extras"]["tags"].stringValue
         let owner_name = json["extras"]["owner_name"].stringValue
         let views = json["extras"]["views"].stringValue
-        let nsid = json["user_id"].stringValue
+        let nsid = json["user_id"]["id"].stringValue
         self.init(id: id, owner: owner, secret: secret, server: server, farm: farm, title: title, date_taken: date_taken, icon_server: icon_server, geo: geo, tags: tags, owner_name: owner_name, views: views, nsid: nsid)
     }
 

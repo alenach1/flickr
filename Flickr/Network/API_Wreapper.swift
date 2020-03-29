@@ -58,7 +58,7 @@ class API_Wreapper {
                                          "photo_id" : photoId,
                                          "format" : "json",
                                          "nojsoncallback" : 1,
-                                         "user_id" : "nsid"]
+                                         "user_id" : "id"]
     
        let request: URLRequest = API_conf.createRequest(withURL: url, andParams: params)
         
