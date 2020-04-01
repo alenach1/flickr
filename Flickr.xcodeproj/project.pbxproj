@@ -31,6 +31,8 @@
 		F7AAE4B5241187DE007A2ECA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AAE4B4241187DE007A2ECA /* BaseViewController.swift */; };
 		F7B8ABFE2428C4310070B578 /* GetInfoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8ABFD2428C4310070B578 /* GetInfoUser.swift */; };
 		F7B8AC002430C90A0070B578 /* IconUrlCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8ABFF2430C90A0070B578 /* IconUrlCreator.swift */; };
+		F7B8AC022430DDFD0070B578 /* NiceTegsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8AC012430DDFD0070B578 /* NiceTegsCreator.swift */; };
+		F7B8AC262434DFF90070B578 /* DetailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B8AC252434DFF90070B578 /* DetailComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		F7AAE4B4241187DE007A2ECA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F7B8ABFD2428C4310070B578 /* GetInfoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoUser.swift; sourceTree = "<group>"; };
 		F7B8ABFF2430C90A0070B578 /* IconUrlCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconUrlCreator.swift; sourceTree = "<group>"; };
+		F7B8AC012430DDFD0070B578 /* NiceTegsCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceTegsCreator.swift; sourceTree = "<group>"; };
+		F7B8AC252434DFF90070B578 /* DetailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 				F7B8ABFF2430C90A0070B578 /* IconUrlCreator.swift */,
 				F7AAE49D240429D5007A2ECA /* PhotoSizeManager.swift */,
 				F7B8ABFD2428C4310070B578 /* GetInfoUser.swift */,
+				F7B8AC012430DDFD0070B578 /* NiceTegsCreator.swift */,
 			);
 			path = Serveise;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				F7AAE4AE240C1F5F007A2ECA /* DetailViewController.swift */,
+				F7B8AC252434DFF90070B578 /* DetailComponent.swift */,
 			);
 			path = DetailPhotoVC;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 			files = (
 				F7AAE48E2403FE27007A2ECA /* API_conf.swift in Sources */,
 				F7AAE4792403FADD007A2ECA /* TapeViewController.swift in Sources */,
+				F7B8AC262434DFF90070B578 /* DetailComponent.swift in Sources */,
 				F7AAE48B2403FC69007A2ECA /* Const.swift in Sources */,
 				F7AAE4AB240C036C007A2ECA /* PhotoCVCell.swift in Sources */,
 				F7AAE4A024056A3F007A2ECA /* RootController.swift in Sources */,
@@ -370,6 +377,7 @@
 				F7B8ABFE2428C4310070B578 /* GetInfoUser.swift in Sources */,
 				F7AAE4772403FADD007A2ECA /* SceneDelegate.swift in Sources */,
 				F7AAE4B5241187DE007A2ECA /* BaseViewController.swift in Sources */,
+				F7B8AC022430DDFD0070B578 /* NiceTegsCreator.swift in Sources */,
 				F7AAE4AF240C1F5F007A2ECA /* DetailViewController.swift in Sources */,
 				F7AAE4B2241183BD007A2ECA /* FlickrLoader.swift in Sources */,
 				F7B8AC002430C90A0070B578 /* IconUrlCreator.swift in Sources */,

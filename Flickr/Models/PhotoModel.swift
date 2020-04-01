@@ -18,20 +18,18 @@ class PhotoModel {
     let title: String?
     let date_taken: String
     let icon_server: String
-    let geo: String
+    let geo: (Float, Float)
     let tags: String
     let owner_name: String
     let views: String
     let nsid: String
     let iconfarm: String
     
-    
-    //date_taken,icon_server,geo,tags,owner_name,views
     var size: CGSize?
     var url: String?
     var urlIcon: String?
     
-    init(id: String, owner: String, secret: String, server: String, farm: Int, title: String?, date_taken: String, icon_server: String, geo: String, tags: String, owner_name: String, views: String, nsid: String, iconfarm: String) {
+    init(id: String, owner: String, secret: String, server: String, farm: Int, title: String?, date_taken: String, icon_server: String, geo: (Float , Float), tags: String, owner_name: String, views: String, nsid: String, iconfarm: String) {
         self.owner = owner
         self.secret = secret
         self.server = server
@@ -59,7 +57,7 @@ extension PhotoModel {
         let title = json["title"].stringValue
         let date_taken = json["extras"]["date_taken"].stringValue
         let icon_server = json["extras"]["icon_server"].stringValue
-        let geo = json["extras"]["geo"].stringValue
+        let geo = (json["extras"]["latitude"].floatValue, json["extras"]["longitude"].floatValue)
         let tags = json["extras"]["tags"].stringValue
         let owner_name = json["extras"]["owner_name"].stringValue
         let views = json["extras"]["views"].stringValue

@@ -36,9 +36,6 @@ class TapeViewController: BaseViewController {
     var total: Int = 0
     var currentPage = 1
     
- 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabaleView()
@@ -142,9 +139,9 @@ extension TapeViewController {
             let currentPage = json["photos"]["page"].intValue
             self.total = json["photos"]["total"].intValue
             
-//            GetInfoUserServeise.getInfoUser(photos: photos) { [weak self] (isSuccess) in
-//                guard let self = self else { return }
-//            }
+            GetInfoUserServeise.getInfoUser(photos: photos) { [weak self] (isSuccess) in
+                guard let self = self else { return }
+            }
             PhotoSizeManager.getSize(photos: photos) { [weak self] (isSuccess) in
                 guard let self = self else { return }
                 DispatchQueue.main.async {
