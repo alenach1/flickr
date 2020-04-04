@@ -12,7 +12,7 @@ class DetailViewController: BaseViewController {
     
     var model: PhotoModel?
     var contentView = DetailComponent()
-    
+    var scrollView = UIScrollView()
   
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -20,19 +20,10 @@ class DetailViewController: BaseViewController {
         refreshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
         return refreshControl
     }()
-    
-   
-        var scrollView = UIScrollView()
-       
-   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        
-        configure(withPhoto: model!)
-        
-        
     }
     
     @objc func requestData() {
@@ -40,40 +31,39 @@ class DetailViewController: BaseViewController {
     }
 
     fileprivate func setupLayout() {
-        view.backgroundColor = .white
-        guard let model = model else { return }
-        navigationItem.title = model.owner_name
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         
+//        guard let model = model else { return }
+        
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
         
-        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo:scrollView.trailingAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-    }
-    func configure(withPhoto photo: PhotoModel) {
-        //MARK: -  Конфигурация изображения
-        guard let url = URL(string: photo.url ?? "") else {
-            contentView.preparedView.image = nil
-            return
-        }
-        contentView.preparedView.sd_setImage(with: url)
+        contentView.heightAnchor.constraint(equalToConstant: 1000).isActive = true
+        contentView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+//        contentView.backgroundColor = .red
         
-        //MARK: - Конфигурация иконки пользователя
-        guard let urlIcon = URL(string: photo.urlIcon ?? "") else {
-            contentView.userIcon.image = nil
-            return
-        }
-        contentView.userIcon.sd_setImage(with: urlIcon)
     }
-    
     
 }
+
+//extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return model!.tagsArray!.count
+//    }
+    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        <#code#>
+//    }
+    
+    
+

@@ -31,6 +31,9 @@ class TapeViewController: BaseViewController {
     
     let imgUrlCreator = ImgUrlCreator()
     let iconCreator = IconUrlCreator()
+    let dateFormatterInProject = DateFormatterInProject()
+    let niceTagsCreator = NiceTagsCreator()
+    
     var dataSourse: [PhotoModel] = []
     
     var total: Int = 0
@@ -134,6 +137,13 @@ extension TapeViewController {
                 
                 let urlIcon = self.iconCreator.creatUrlIcon(withModel: photo)
                 photo.urlIcon = urlIcon
+                
+                let dateTaken = self.dateFormatterInProject.creatNiceData(withModel: photo)
+                photo.date_taken = dateTaken
+                
+                let tags = self.niceTagsCreator.creatNiceTags(withModel: photo)
+                photo.tagsArray = tags
+                
                 photos.append(photo)
             }
             let currentPage = json["photos"]["page"].intValue

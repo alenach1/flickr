@@ -24,6 +24,8 @@ class CollectionViewController: BaseViewController {
     var dataSourse: [PhotoModel] = []
     let imgUrlCreator = ImgUrlCreator()
     let iconCreator = IconUrlCreator()
+    let dateFormatterInProject = DateFormatterInProject()
+    let niceTagsCreator = NiceTagsCreator()
     
     var state: VCCollectionState = .initial
     
@@ -116,6 +118,12 @@ extension CollectionViewController {
                 
                 let urlIcon = self.iconCreator.creatUrlIcon(withModel: photo)
                 photo.urlIcon = urlIcon
+                
+                let dateTaken = self.dateFormatterInProject.creatNiceData(withModel: photo)
+                photo.date_taken = dateTaken
+                
+                let tags = self.niceTagsCreator.creatNiceTags(withModel: photo)
+                photo.tagsArray = tags
                 
                 photos.append(photo)
             }
