@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		932E9B97B1B8B904E88957A4 /* Pods_Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99990143D947FB6F54A3A9BA /* Pods_Flickr.framework */; };
+		F7773E962438A9C3009A1DF2 /* GetLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7773E952438A9C3009A1DF2 /* GetLocation.swift */; };
+		F7773E992438AACA009A1DF2 /* MapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7773E982438AACA009A1DF2 /* MapLocationViewController.swift */; };
 		F7A289312437211800554725 /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A289302437211800554725 /* DataFormatter.swift */; };
 		F7A28934243752F600554725 /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A28932243752F600554725 /* TagsCollectionViewCell.swift */; };
 		F7A28935243752F600554725 /* TagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A28933243752F600554725 /* TagsCollectionViewCell.xib */; };
@@ -42,6 +44,8 @@
 		5BFFB5D9A2776D27A78A7E9A /* Pods-Flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr.debug.xcconfig"; path = "Target Support Files/Pods-Flickr/Pods-Flickr.debug.xcconfig"; sourceTree = "<group>"; };
 		99990143D947FB6F54A3A9BA /* Pods_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1D28E434091C95C84F66EBD /* Pods-Flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickr.release.xcconfig"; path = "Target Support Files/Pods-Flickr/Pods-Flickr.release.xcconfig"; sourceTree = "<group>"; };
+		F7773E952438A9C3009A1DF2 /* GetLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocation.swift; sourceTree = "<group>"; };
+		F7773E982438AACA009A1DF2 /* MapLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationViewController.swift; sourceTree = "<group>"; };
 		F7A289302437211800554725 /* DataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
 		F7A28932243752F600554725 /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7A28933243752F600554725 /* TagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -103,6 +107,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F7773E972438AA72009A1DF2 /* MapLocationForPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				F7773E982438AACA009A1DF2 /* MapLocationViewController.swift */,
+			);
+			path = MapLocationForPhoto;
+			sourceTree = "<group>";
+		};
 		F7A28936243752FE00554725 /* Tags */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +127,7 @@
 		F7AAE4682403FADD007A2ECA = {
 			isa = PBXGroup;
 			children = (
+				F7773E972438AA72009A1DF2 /* MapLocationForPhoto */,
 				F7AAE4B3241187C1007A2ECA /* BaseViewController */,
 				F7AAE4732403FADD007A2ECA /* Flickr */,
 				F7AAE4722403FADD007A2ECA /* Products */,
@@ -194,6 +207,7 @@
 				F7B8ABFD2428C4310070B578 /* GetInfoUser.swift */,
 				F7B8AC012430DDFD0070B578 /* NiceTagsCreator.swift */,
 				F7A289302437211800554725 /* DataFormatter.swift */,
+				F7773E952438A9C3009A1DF2 /* GetLocation.swift */,
 			);
 			path = Serveise;
 			sourceTree = "<group>";
@@ -385,6 +399,7 @@
 				F7AAE48B2403FC69007A2ECA /* Const.swift in Sources */,
 				F7AAE4AB240C036C007A2ECA /* PhotoCVCell.swift in Sources */,
 				F7AAE4A024056A3F007A2ECA /* RootController.swift in Sources */,
+				F7773E962438A9C3009A1DF2 /* GetLocation.swift in Sources */,
 				F7AAE4752403FADD007A2ECA /* AppDelegate.swift in Sources */,
 				F7AAE49324040A1E007A2ECA /* PhotoModel.swift in Sources */,
 				F7AAE49624040B7D007A2ECA /* ImgUrlCreator.swift in Sources */,
@@ -394,6 +409,7 @@
 				F7AAE49E240429D5007A2ECA /* PhotoSizeManager.swift in Sources */,
 				F7AAE4902403FE47007A2ECA /* API_Wreapper.swift in Sources */,
 				F7B8ABFE2428C4310070B578 /* GetInfoUser.swift in Sources */,
+				F7773E992438AACA009A1DF2 /* MapLocationViewController.swift in Sources */,
 				F7A28934243752F600554725 /* TagsCollectionViewCell.swift in Sources */,
 				F7AAE4772403FADD007A2ECA /* SceneDelegate.swift in Sources */,
 				F7AAE4B5241187DE007A2ECA /* BaseViewController.swift in Sources */,

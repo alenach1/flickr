@@ -150,5 +150,34 @@
             </objects>
             <point key="canvasLocation" x="688.40579710144937" y="-48.214285714285715"/>
         </scene>
+        <!--Map Location View Controller-->
+        <scene sceneID="heQ-wx-xvf">
+            <objects>
+                <viewController id="zcT-sx-u8p" customClass="MapLocationViewController" customModule="Flickr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kfO-fc-JfJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9nX-WG-weT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SzV-BJ-iz8" firstAttribute="bottom" secondItem="9nX-WG-weT" secondAttribute="bottom" id="99W-WK-cmn"/>
+                            <constraint firstItem="SzV-BJ-iz8" firstAttribute="trailing" secondItem="9nX-WG-weT" secondAttribute="trailing" id="G6e-Sn-SO4"/>
+                            <constraint firstItem="9nX-WG-weT" firstAttribute="top" secondItem="SzV-BJ-iz8" secondAttribute="top" id="Wbe-Rg-2i0"/>
+                            <constraint firstItem="9nX-WG-weT" firstAttribute="leading" secondItem="SzV-BJ-iz8" secondAttribute="leading" id="hgR-hK-jSC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SzV-BJ-iz8"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="9nX-WG-weT" id="IxH-II-j4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQB-sC-GEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="-48"/>
+        </scene>
     </scenes>
 </document>

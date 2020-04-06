@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Reusable
+import SwiftyJSON
+import SDWebImage
 
 class DetailViewController: BaseViewController {
     
     var model: PhotoModel?
-    var contentView = DetailComponent()
+    
     var scrollView = UIScrollView()
   
     lazy var refresher: UIRefreshControl = {
@@ -20,10 +23,11 @@ class DetailViewController: BaseViewController {
         refreshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
         return refreshControl
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        
     }
     
     @objc func requestData() {
@@ -32,17 +36,17 @@ class DetailViewController: BaseViewController {
 
     fileprivate func setupLayout() {
         
-//        guard let model = model else { return }
-        
+        guard let model = model else { return }
+        let contentView = DetailComponent(frame: CGRect(), model: model)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         
         contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
@@ -56,14 +60,17 @@ class DetailViewController: BaseViewController {
     
 }
 
-//extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return model!.tagsArray!.count
-//    }
+extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return model!.tagsArray!.count
+    }
     
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TagsCollectionViewCell)
+        let tagArray = model?.tagsArray
+        cell.configure(arrayTags: tagArray)
+        return cell
+    }
+}
     
 
