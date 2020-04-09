@@ -10,30 +10,24 @@ import UIKit
 import SDWebImage
 import Reusable
 
-class TagsCollectionViewCell: UICollectionViewCell {
+class TagsCollectionViewCell: UICollectionViewCell, NibReusable {
     
-    var model: PhotoModel?
-    @IBOutlet weak var tagButton: UIButton!
+    @IBOutlet weak var tagButtonInCollectionView: UIButton!
     static var reuseIdentifier: String { return "tagsCollectionViewCell" }
     static var nib: UINib { return UINib(nibName: "TagsCollectionViewCell", bundle: nil) }
    
     
-    override init(frame: CGRect) {
-        super.init(frame: .zero)
-        contentView.addSubview(tagButton)
-        tagButton.clipsToBounds = true
-        tagButton.contentMode = .scaleAspectFill
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
+        tagButtonInCollectionView.clipsToBounds = true
+        tagButtonInCollectionView.contentMode = .scaleAspectFill
+        print(tagButtonInCollectionView)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configure(arrayTags: [String]) {
 
-        for i in 0...arrayTags.count {
-            tagButton.titleLabel!.text = arrayTags[i]
-        }
+    func configure(tags: String) {
+        
+        tagButtonInCollectionView.setTitle(tags, for: .normal)
+        
     }
 }

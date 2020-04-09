@@ -28,6 +28,8 @@ class DetailViewController: BaseViewController {
         super.viewDidLoad()
         setupLayout()
         
+    
+        
     }
     
     @objc func requestData() {
@@ -37,7 +39,7 @@ class DetailViewController: BaseViewController {
     fileprivate func setupLayout() {
         
         guard let model = model else { return }
-        let contentView = DetailComponent(frame: CGRect(), model: model)
+        let contentView = DetailComponent(frame: CGRect(), model: model, vc: self)
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
@@ -54,21 +56,20 @@ class DetailViewController: BaseViewController {
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         contentView.heightAnchor.constraint(equalToConstant: 1000).isActive = true
         contentView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-//        contentView.backgroundColor = .red
-        
     }
     
 }
 
 extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model!.tagsArray!.count
+    
+        return model?.tagsArray?.count ?? 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TagsCollectionViewCell)
-        let tagArray = model?.tagsArray
-        cell.configure(arrayTags: tagArray)
+        let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: TagsCollectionViewCell.self)
+        let tags = (model?.tagsArray![indexPath.row] ?? "хуй")
+        cell.configure(tags: "huy")
         return cell
     }
 }

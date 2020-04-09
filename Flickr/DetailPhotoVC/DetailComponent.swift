@@ -19,20 +19,22 @@ class DetailComponent: UIView {
    
     var preparedView = UIImageView()
         
-    var stackIconBar = UIStackView ()
-      
-   
-    var tagsCollectionView = UICollectionView()
-        
-      
+    var stackIconBar = UIStackView()
     
-    init(frame: CGRect, model: PhotoModel) {
+//    var tagsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+
+    weak var vc: DetailViewController?
+        
+    
+    init(frame: CGRect, model: PhotoModel, vc: DetailViewController) {
         super.init(frame: frame)
         self.model = model
+        self.vc = vc
+        if let vc = self.vc {
         if let model = self.model {
         setupLayouts(model: model)
         }
-
+        }
     }
     
     fileprivate func setupLayouts(model: PhotoModel) {
@@ -125,12 +127,21 @@ class DetailComponent: UIView {
         stackIconBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         //tagsCollectionView
-        addSubview(tagsCollectionView)
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        tagsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        tagsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        layout.itemSize = CGSize(width: 100, height: 100)
+        
+        let tagsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        addSubview(tagsCollectionView)
+        
         tagsCollectionView.register(TagsCollectionViewCell.self, forCellWithReuseIdentifier: "tagsCollectionViewCell")
+        tagsCollectionView.dataSource = vc
+        tagsCollectionView.delegate = vc
+        tagsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+     
+        tagsCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        tagsCollectionView.topAnchor.constraint(equalTo: stackIconBar.bottomAnchor, constant: 20).isActive = true
+        tagsCollectionView.trailingAnchor.constraint(equalTo:self.trailingAnchor, constant: -10).isActive = true
+        tagsCollectionView.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
     required init?(coder: NSCoder) {

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagsCollectionViewCell" id="gTV-IL-0wX" customClass="TagsCollectionViewCell" customModule="Flickr" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TagsCollectionViewCell" customModule="Flickr" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -29,6 +29,9 @@
                 <constraint firstAttribute="trailing" secondItem="33E-Nl-05L" secondAttribute="trailing" id="yRL-MI-xPV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="tagButtonInCollectionView" destination="33E-Nl-05L" id="NR5-dO-fn3"/>
+            </connections>
             <point key="canvasLocation" x="141" y="90"/>
         </collectionViewCell>
     </objects>
